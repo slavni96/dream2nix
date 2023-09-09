@@ -48,10 +48,7 @@
       name = defaultPackageName;
       src = getSource defaultPackageName defaultPackageVersion;
       format = "other";
-      buildInputs = pkgs.pythonManylinuxPackages.manylinux1;
-      nativeBuildInputs =
-        [pkgs.autoPatchelfHook]
-        ++ (with python.pkgs; [
+      nativeBuildInputs = (with python.pkgs; [
           pip
           wheel
         ])
